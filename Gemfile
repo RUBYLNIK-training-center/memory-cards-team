@@ -26,7 +26,6 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-gem 'rubocop-rails', '>= 2.14.2'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
@@ -35,7 +34,9 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry', '~> 0.13.1'
   gem 'rspec-rails'
-  gem 'rubocop-rspec', require: false
+  gem 'rubocop', '~> 1.29', require: false
+  gem 'rubocop-rails', '>= 2.14.2'
+  gem 'rubocop-rspec', '~> 2.10'
 end
 
 group :development do
