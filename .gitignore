@@ -28,3 +28,6 @@
 
 # Ignore node_modules and assets
 /node_modules
+
+# Ignore minitest files
+/test
