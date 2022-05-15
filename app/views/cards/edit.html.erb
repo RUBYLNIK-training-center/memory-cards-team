@@ -1,0 +1,7 @@
+<h1>Edit card</h1>
+<%= form_with model: @card do |form| %>
+  <%= form.text_field :question, placeholder: "question" %>
+  <%= form.text_field :answer, placeholder: "answer" %>
+  <%= form.submit %>
+<% end %>
+<%= link_to 'Back to card list', cards_path, method: 'get'%>

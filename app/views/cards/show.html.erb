@@ -1,0 +1,4 @@
+<h1><%= @card.question%></h2>
+<h4>"<%= @card.answer %>"</h4>
+<%= link_to 'Remove', @card, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back to card list', cards_path, method: 'get'%>

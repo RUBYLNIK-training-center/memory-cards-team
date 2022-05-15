@@ -1,0 +1,10 @@
+<h1>Cards</h1>
+<table>
+  <% @cards.each do |card| %>
+    <tr>
+      <td><%= link_to card.question, card_path(card) %></td>
+      <td><%= button_to 'Edit', edit_card_path(card), method: 'get'%></td>
+      <td><%= button_to 'Remove', card_path(card), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+</table>
+<%= button_to "Add a new card", new_card_path, method: 'get'%>
