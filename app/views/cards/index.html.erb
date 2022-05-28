@@ -1,17 +1,23 @@
 <h1>Cards</h1>
-<table class="table table-hover">
-  <thead>
-    <th>Card question</th>
-    <th>Board id</th>
-    <th></th>
-    <th></th>
-  </thead>
+<%= button_to "New card", new_card_path, method: 'get', class: "btn btn-outline-dark"%>
+<br>
    <% @cards.each do |card| %>
-    <tr>
-      <td><%= link_to card.question, card_path(card) %></td>
-      <td><%=card.board_id%></td>
-      <td><%= button_to 'Edit', edit_card_path(card), method: 'get', class: "btn btn-primary"%></td>
-      <td><%= button_to 'Remove', card_path(card), method: 'delete', class: "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
+   <div class="mb-4 bg-light p-3">
+   <div class="row card-body justify-content-sm-around">
+      <div class="col-4 card-question border shadow-lg rounded">
+        <%= card.question %>
+      </div>
+      <div class="col-6 card-answer border shadow-lg rounded">
+        <%= md_format(card.answer).html_safe %> 
+      </div>
+      <div class="col-1">
+      <%= button_to(edit_card_path(card), method: 'get', class: "btn btn-primary") do%>
+      <i class="bi bi-pencil-fill"></i>
+        <% end %>
+         <%= button_to(card_path(card), method: 'delete', class: "btn btn-danger", data: { confirm: 'Are you sure?' }) do%>
+      <i class="bi bi-trash-fill"></i>
+        <% end %>
+      </div>
+    </div>
+    </div>
   <% end %>
-</table>
-<%= button_to "Add a new card", new_card_path, method: 'get', class: "btn btn-outline-dark"%>

@@ -2,8 +2,8 @@
 
 module ApplicationHelper
   def md_format(text)
-    options = { no_intra_emphasis: true, fenced_code_blocks: true, autolink: true, strikethrough: true,
-                hard_wrap: true, disable_indented_code_blocks: true }
-    Markdown.new(text, options).to_html
+    options = %i[no_intra_emphasis fenced_code_blocks autolink strikethrough
+                 hard_wrap disable_indented_code_blocks]
+    Markdown.new(text, *options).to_html
   end
 end
