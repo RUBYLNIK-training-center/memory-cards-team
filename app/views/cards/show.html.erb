@@ -1,27 +1,11 @@
-<h1>Card information</h1>
-<script type="text/javascript">
-	function toggleText(button_id)  {
-     var el = document.getElementById(button_id);
-   if (el.firstChild.data == "Show answer") 
-   {
-       el.firstChild.data = "Hide answer";
-       el.className = "btn btn-secondary";
-   }
-   else 
-   {
-     el.firstChild.data = "Show answer";
-     el.className = "btn btn-primary";
-   }
-}
-</script>
-<div class="card text-center">
-  <div class="card-header">
+<div class="card text-center border-dark w-75 mx-auto">
+  <div class="card-header bg-dark text-white">
     Question
   </div>
   <div class="card-body">
     <h5 class="card-title"><%= @card.question %></h5>
-    <button class="btn btn-primary" id="showAnswer" onClick="toggleText(this.id)" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Show answer</button>
-  <div class="collapse" id="collapseExample">
+    <button class="btn btn-dark" id="showAnswer" onClick='toggleText(this.id)' type="button" data-bs-toggle="collapse" data-bs-target="#collapseAnswer" aria-expanded="true" aria-controls="collapseAnswer">Show answer</button>
+  <div class="collapse" id="collapseAnswer">
   <div class="card card-body">
     <%= md_format(@card.answer).html_safe %>
   </div>
@@ -29,4 +13,4 @@
 </div>
 </div>
 <br />
-<%= link_to "Back to all cards", cards_path %>
+<%= link_to "Back to all cards", cards_path %><br>

@@ -14,14 +14,4 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-function toggleText(button_id)  {
-     var el = document.getElementById(button_id);
-   if (el.firstChild.data == "Show answer") 
-   {
-       el.firstChild.data = "Hide answer";
-   }
-   else 
-   {
-     el.firstChild.data = "Show answer";
-   }
-};
+require("packs/toggle_text")
