@@ -6,7 +6,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="/"><%= t('.home') %></a>
+        <%= link_to t('.home'), root_path, class:"nav-link active" %>
         <%= link_to t('.manual'), manual_path, class:"nav-link active" %>
         <%= link_to t('.import'), imports_path, class:"nav-link active" %>
       </div>
